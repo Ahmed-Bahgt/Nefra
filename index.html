@@ -38,7 +38,7 @@
 
     <!-- ===== MAIN SITE ===== -->
     <div class="background-overlay"></div>
-    
+
     <!-- Top Controls (Global) -->
     <div class="top-controls">
         <button id="lang-toggle-btn" onclick="toggleLanguage()">عربي</button>
@@ -70,7 +70,7 @@
         </header>
 
         <main class="links">
-            <a href="https://www.instagram.com/nefra222?igsh=cHBsbWNzeTRqeGc4" target="_blank" class="link-btn">
+            <a href="https://www.instagram.com/nefra222/" target="_blank" class="link-btn">
                 <span class="icon">
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -82,7 +82,7 @@
                 <span class="link-text" id="ig-text">Instagram</span>
             </a>
 
-            <a href="https://www.tiktok.com/@nefra_7?_r=1&_t=ZS-97KUH7KttUD" target="_blank" class="link-btn">
+            <a href="https://www.tiktok.com/@nefra_7" target="_blank" class="link-btn">
                 <span class="icon">
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -105,7 +105,7 @@
         function enterSite() {
             const splash = document.getElementById('splash-screen');
             splash.classList.add('fade-out');
-            
+
             // Show the music toggle button
             document.getElementById('music-toggle-btn').style.display = 'flex';
 
@@ -151,7 +151,7 @@
 
             document.documentElement.lang = currentLang;
             document.body.style.fontFamily = t.font;
-            
+
             if (currentLang === 'ar') {
                 document.body.classList.add('lang-ar');
             } else {
@@ -163,7 +163,7 @@
             document.getElementById('tt-text').textContent = t.tt;
             document.getElementById('footer-text').textContent = t.footer;
             document.getElementById('lang-toggle-btn').textContent = t.btn;
-            
+
             const splashTagline = document.getElementById('splash-tagline');
             if (splashTagline) splashTagline.textContent = t.splashTagline;
             const splashEnter = document.getElementById('splash-enter-text');
