@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEFRA | Ancient Egyptian Fashion</title>
+    <meta name="description" content="NEFRA Linktree - Ancient Egyptian Fashion Brand">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles_v3.css">
+</head>
+
+<body>
+    <!-- ===== SPLASH SCREEN ===== -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="splash-bg"></div>
+        <div class="splash-hieroglyphs">
+            <span>𓀀</span><span>𓁀</span><span>𓂀</span><span>𓃀</span><span>𓄀</span>
+            <span>𓅀</span><span>𓆀</span><span>𓇀</span><span>𓈀</span><span>𓉀</span>
+            <span>𓊀</span><span>𓋀</span><span>𓌀</span><span>𓍀</span><span>𓎀</span>
+        </div>
+        <div class="splash-content">
+            <div class="splash-ankh">𓋹</div>
+            <h1 class="splash-logo">NEFRA</h1>
+            <p class="splash-hieroglyphic">𓈖 𓇋 𓆑 𓂋 𓄿</p>
+            <p class="splash-tagline" id="splash-tagline">Ancient Egyptian Fashion</p>
+            <button class="splash-enter-btn" id="enter-btn" onclick="enterSite()">
+                <span class="enter-text" id="splash-enter-text">DISCOVER THE SECRET</span>
+                <span class="enter-icon">𓂧</span>
+            </button>
+        </div>
+        <div class="splash-footer-hint">
+            <span class="splash-sound-icon">♪</span> <span id="splash-sound-text">Sound Experience Awaits</span>
+        </div>
+    </div>
+
+    <!-- ===== MAIN SITE ===== -->
+    <div class="background-overlay"></div>
+    
+    <!-- Top Controls (Global) -->
+    <div class="top-controls">
+        <button id="lang-toggle-btn" onclick="toggleLanguage()">عربي</button>
+        <button id="music-toggle-btn" onclick="toggleMusic()" title="Toggle Music" style="display: none;">
+            <span class="music-icon" id="music-icon">𓂀</span>
+            <span class="music-waves" id="music-waves">
+                <span class="wave"></span>
+                <span class="wave"></span>
+                <span class="wave"></span>
+            </span>
+        </button>
+    </div>
+
+    <div class="container" id="main-container">
+
+
+
+        <header class="profile">
+            <div class="logo-container">
+                <img src="logo.jpeg" alt="NEFRA Logo" class="logo-image">
+            </div>
+            <h1 class="brand-name">NEFRA</h1>
+            <p class="hieroglyphic-name">𓈖 𓇋 𓆑 𓂋 𓄿</p>
+            <p class="brand-tagline" id="tagline">
+                <span id="tagline-text">From the banks of the Nile to your wardrobe. Unleash your inner deity with
+                    NEFRA.</span>
+                <span class="ankh-symbol">𓋹</span>
+            </p>
+        </header>
+
+        <main class="links">
+            <a href="https://www.instagram.com/nefra222?igsh=cHBsbWNzeTRqeGc4" target="_blank" class="link-btn">
+                <span class="icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </span>
+                <span class="link-text" id="ig-text">Instagram</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@nefra_7?_r=1&_t=ZS-97KUH7KttUD" target="_blank" class="link-btn">
+                <span class="icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                    </svg>
+                </span>
+                <span class="link-text" id="tt-text">TikTok</span>
+            </a>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> <span id="footer-text">NEFRA. All Rights Reserved.</span></p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        /* ===== SPLASH SCREEN LOGIC ===== */
+        function enterSite() {
+            const splash = document.getElementById('splash-screen');
+            splash.classList.add('fade-out');
+            
+            // Show the music toggle button
+            document.getElementById('music-toggle-btn').style.display = 'flex';
+
+            startMusic();
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 1000);
+        }
+
+        /* ===== LANGUAGE TOGGLE ===== */
+        const translations = {
+            en: {
+                tagline: "From the banks of the Nile to your wardrobe. Unleash your inner deity with NEFRA.",
+                ig: "Instagram",
+                tt: "TikTok",
+                footer: "NEFRA. All Rights Reserved.",
+                btn: "عربي",
+                dir: "ltr",
+                font: "'Inter', sans-serif",
+                splashTagline: "Ancient Egyptian Fashion",
+                splashEnter: "DISCOVER THE SECRET",
+                splashSound: "Sound Experience Awaits"
+            },
+            ar: {
+                tagline: "من ضفاف النيل إلى خزانة ملابسك. أطلق العنان للإله الذي بداخلك مع نيفرا.",
+                ig: "انستجرام",
+                tt: "تيك توك",
+                footer: "نيفرا. جميع الحقوق محفوظة.",
+                btn: "English",
+                dir: "rtl",
+                font: "'Cairo', sans-serif",
+                splashTagline: "أزياء مصرية قديمة",
+                splashEnter: "اكتشف السر",
+                splashSound: "تجربة صوتية في انتظارك"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const t = translations[currentLang];
+
+            document.documentElement.lang = currentLang;
+            document.body.style.fontFamily = t.font;
+            
+            if (currentLang === 'ar') {
+                document.body.classList.add('lang-ar');
+            } else {
+                document.body.classList.remove('lang-ar');
+            }
+
+            document.getElementById('tagline-text').textContent = t.tagline;
+            document.getElementById('ig-text').textContent = t.ig;
+            document.getElementById('tt-text').textContent = t.tt;
+            document.getElementById('footer-text').textContent = t.footer;
+            document.getElementById('lang-toggle-btn').textContent = t.btn;
+            
+            const splashTagline = document.getElementById('splash-tagline');
+            if (splashTagline) splashTagline.textContent = t.splashTagline;
+            const splashEnter = document.getElementById('splash-enter-text');
+            if (splashEnter) splashEnter.textContent = t.splashEnter;
+            const splashSound = document.getElementById('splash-sound-text');
+            if (splashSound) splashSound.textContent = t.splashSound;
+        }
+
+        /* ===== MUSIC PLAYER ===== */
+        const audio = new Audio('music.mp3');
+        audio.loop = true;
+        audio.volume = 0.5;
+        let musicPlaying = false;
+
+        function startMusic() {
+            audio.play().then(() => {
+                musicPlaying = true;
+                updateMusicUI(true);
+            }).catch(() => { });
+        }
+
+        function stopMusic() {
+            audio.pause();
+            musicPlaying = false;
+            updateMusicUI(false);
+        }
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                stopMusic();
+            } else {
+                startMusic();
+            }
+        }
+
+        function updateMusicUI(playing) {
+            const btn = document.getElementById('music-toggle-btn');
+            const waves = document.getElementById('music-waves');
+            if (playing) {
+                btn.classList.add('playing');
+                waves.classList.add('active');
+            } else {
+                btn.classList.remove('playing');
+                waves.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
